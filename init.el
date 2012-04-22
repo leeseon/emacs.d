@@ -1,6 +1,7 @@
 (tool-bar-mode -1)
 (cua-mode t)
 (ido-mode t)
+(setq ring-bell-function 'ignore)
 
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -47,3 +48,6 @@
 (recentf-mode 1)
 (global-visual-line-mode 1) ; 1 for on, 0 for off.
 (global-set-key (kbd "<f7>") 'toggle-truncate-lines)
+
+(add-to-list 'load-path "~/.emacs.d/magit")
+(require 'magit)
