@@ -1,7 +1,30 @@
 (tool-bar-mode -1)
+
+(setq mac-option-key-is-meta nil)
+(setq mac-command-key-is-meta t)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil)
+
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(package-initialize)
+(setq abg-required-packages
+      (list 'ergoemacs-keybindings ))
+(dolist (package abg-required-packages)
+  (when (not (package-installed-p package))
+    (package-refresh-contents)
+    (package-install package)))
+
+(require 'ergoemacs-mode)
+(setenv "ERGOEMACS_KEYBOARD_LAYOUT" "us")
+(ergoemacs-mode 1)
+
 (cua-mode t)
 (ido-mode t)
 (setq ring-bell-function 'ignore)
+(transient-mark-mode 1)
+(delete-selection-mode 1)
 
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -36,17 +59,14 @@
 	     (inf-ruby-keys)
 	     ))
 
-
 (add-hook 'ruby-mode-hook (lambda () (set tab-width 2)))
-					; show line number the cursor is on, in status bar (the mode line)
 (line-number-mode 1)
-					; display line numbers in margin (fringe). Emacs 23 only.
-(global-linum-mode 1) ; always show line numbers
+(global-linum-mode 1) 
 (column-number-mode 1)
-(setq make-backup-files nil) ; stop creating those backup~ files
-(setq auto-save-default nil) ; stop creating those #autosave# files
+(setq make-backup-files nil) 
+(setq auto-save-default nil) 
 (recentf-mode 1)
-(global-visual-line-mode 1) ; 1 for on, 0 for off.
+(global-visual-line-mode 1) 
 (global-set-key (kbd "<f7>") 'toggle-truncate-lines)
 
 (add-to-list 'load-path "~/.emacs.d/magit")
