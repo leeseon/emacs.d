@@ -1,4 +1,7 @@
 (tool-bar-mode -1)
+(setq inhibit-startup-message t)
+(defalias 'yes-or-no-p 'y-or-n-p)
+(iswitchb-mode 1)
 
 (setq mac-option-key-is-meta nil)
 (setq mac-command-key-is-meta t)
@@ -71,3 +74,37 @@
 
 (add-to-list 'load-path "~/.emacs.d/magit")
 (require 'magit)
+
+(require 'keyfreq)
+(keyfreq-mode 1)
+(keyfreq-autosave-mode 1)
+
+(require 'tabbar)
+; turn on the tabbar
+(tabbar-mode t)
+; define all tabs to be one of 3 possible groups: “Emacs Buffer”, “Dired”,
+;“User Buffer”.
+
+(defun tabbar-buffer-groups ()
+  "Return the list of group names the current buffer belongs to.
+This function is a custom function for tabbar-mode's tabbar-buffer-groups.
+This function group all buffers into 3 groups:
+Those Dired, those user buffer, and those emacs buffer.
+Emacs buffer are those starting with “*”."
+  (list
+   (cond
+    ((string-equal "*" (substring (buffer-name) 0 1))
+     "Emacs Buffer"
+     )
+    ((eq major-mode 'dired-mode)
+     "Dired"
+     )
+    (t
+     "User Buffer"
+     )
+    ))) 
+
+(setq tabbar-buffer-groups-function 'tabbar-buffer-groups)
+
+(global-set-key (kbd "M-{") 'tabbar-backward)
+(global-set-key (kbd "M-}") 'tabbar-forward)
