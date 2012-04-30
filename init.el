@@ -32,10 +32,15 @@
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
-(when (featurep 'ns-win)
-  (custom-set-faces
-   '(default ((t (:height 180 :width normal :family "Menlo")))))
-  )
+;; Setting English Font
+(set-face-attribute
+  'default nil :font "Menlo 18")
+ 
+;; Chinese Font
+(dolist (charset '(kana han symbol cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font)
+                      charset
+                      (font-spec :family "Microsoft YaHei" :size 16)))
 
 (require 'maxframe)
 (maximize-frame)
@@ -108,3 +113,4 @@ Emacs buffer are those starting with “*”."
 
 (global-set-key (kbd "M-{") 'tabbar-backward)
 (global-set-key (kbd "M-}") 'tabbar-forward)
+
