@@ -34,7 +34,7 @@
 
 ;; Setting English Font
 (set-face-attribute
-  'default nil :font "Menlo 18")
+  'default nil :font "Menlo 16")
  
 ;; Chinese Font
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
@@ -114,3 +114,5 @@ Emacs buffer are those starting with “*”."
 (global-set-key (kbd "M-{") 'tabbar-backward)
 (global-set-key (kbd "M-}") 'tabbar-forward)
 
+(global-set-key (kbd "M-=") 'text-scale-increase)
+(global-set-key (kbd "M--") 'text-scale-decrease)
