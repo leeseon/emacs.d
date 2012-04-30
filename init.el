@@ -116,3 +116,5 @@ Emacs buffer are those starting with “*”."
 
 (global-set-key (kbd "M-=") 'text-scale-increase)
 (global-set-key (kbd "M--") 'text-scale-decrease)
+(global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
+(global-set-key (kbd "M-w") 'close-current-buffer)
