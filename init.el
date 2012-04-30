@@ -118,3 +118,9 @@ Emacs buffer are those starting with “*”."
 (global-set-key (kbd "M--") 'text-scale-decrease)
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "M-w") 'close-current-buffer)
+
+(require 'color-theme)
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)
+     (color-theme-blackboard)))
