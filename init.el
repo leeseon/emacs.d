@@ -42,6 +42,12 @@
                       charset
                       (font-spec :family "Microsoft YaHei" :size 16)))
 
+(require 'color-theme)
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)
+     (color-theme-blackboard)))
+
 (require 'maxframe)
 (maximize-frame)
 
@@ -119,8 +125,3 @@ Emacs buffer are those starting with “*”."
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "M-w") 'close-current-buffer)
 
-(require 'color-theme)
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-initialize)
-     (color-theme-blackboard)))
