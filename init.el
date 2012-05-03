@@ -125,3 +125,6 @@ Emacs buffer are those starting with “*”."
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "M-w") 'close-current-buffer)
 
+(require 'textmate)
+(require 'peepopen)
+(textmate-mode)
