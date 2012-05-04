@@ -42,11 +42,14 @@
                       charset
                       (font-spec :family "Microsoft YaHei" :size 16)))
 
-(require 'color-theme)
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-initialize)
-     (color-theme-blackboard)))
+;; (require 'color-theme)
+;; (eval-after-load "color-theme"
+;;   '(progn
+;;      (color-theme-initialize)
+;;      (color-theme-blackboard)))
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/themes/")
+(load-theme 'zenburn t)
 
 (require 'maxframe)
 (maximize-frame)
@@ -133,3 +136,16 @@ Emacs buffer are those starting with “*”."
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
 (require 'slime)
 (slime-setup)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("d2622a2a2966905a5237b54f35996ca6fda2f79a9253d44793cfe31079e3c92b" "501caa208affa1145ccbb4b74b6cd66c3091e41c5bb66c677feda9def5eab19c" "3d32d2aa0497e576fc1113dd112333adfd7e9d3163cea87a07e5d34633a1360a" "7579f5fcf8308474126751ca3098a82b53e80701789bce8b92498f8899eaa031" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
