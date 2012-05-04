@@ -9,7 +9,7 @@
 (setq mac-option-modifier nil)
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;;(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 (package-initialize)
@@ -139,3 +139,9 @@ Emacs buffer are those starting with “*”."
 (require 'slime)
 (slime-setup)
 
+(add-to-list 'load-path "~/.emacs.d/undo-tree")
+(require 'undo-tree)
+(global-undo-tree-mode 1)
+(defalias 'redo 'undo-tree-redo)
+(global-set-key (kbd "M-z") 'undo)
+(global-set-key (kbd "M-S-z") 'redo)
