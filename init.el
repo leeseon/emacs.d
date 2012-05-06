@@ -156,3 +156,8 @@ Emacs buffer are those starting with “*”."
 (global-set-key (kbd "M-S-z") 'redo)
 
 (global-set-key (kbd "M-m") 'magit-status)
+
+(setq kill-whole-line t)
+
+(global-set-key (kbd "M-?") 'toggle-letter-case)
+(global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
