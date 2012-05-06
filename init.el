@@ -37,6 +37,7 @@
 
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")
+(add-to-list 'load-path "~/.emacs.d/vendor/themes")
 
 (set-face-attribute
   'default nil :font "Menlo 16")
@@ -149,3 +150,4 @@ Emacs buffer are those starting with “*”."
 (global-set-key (kbd "M-?") 'toggle-letter-case)
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "M-2") 'split-window-horizontally)
+(global-set-key (kbd "M-RET") 'textmate-next-line)
