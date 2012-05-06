@@ -3,7 +3,6 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 (iswitchb-mode 1)
 (show-paren-mode t)
-;;(setq show-paren-style 'parentheses)  
 (require 'saveplace)
 (setq-default save-place t)
 (setq auto-revert-mode 1)
@@ -16,7 +15,6 @@
 (setq mac-option-modifier nil)
 
 (require 'package)
-;;(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 (package-initialize)
@@ -40,21 +38,14 @@
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
-;; Setting English Font
 (set-face-attribute
   'default nil :font "Menlo 16")
  
-;; Chinese Font
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font)
                       charset
                       (font-spec :family "Microsoft YaHei" :size 16)))
 
-;; (require 'color-theme)
-;; (eval-after-load "color-theme"
-;;   '(progn
-;;      (color-theme-initialize)
-;;      (color-theme-blackboard)))
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/themes/")
 (load-theme 'zenburn t)
@@ -102,10 +93,7 @@
 (keyfreq-autosave-mode 1)
 
 (require 'tabbar)
-; turn on the tabbar
 (tabbar-mode t)
-; define all tabs to be one of 3 possible groups: “Emacs Buffer”, “Dired”,
-;“User Buffer”.
 
 (defun tabbar-buffer-groups ()
   "Return the list of group names the current buffer belongs to.
@@ -146,7 +134,6 @@ Emacs buffer are those starting with “*”."
 (require 'slime)
 (require 'slime-autoloads)
 (slime-setup '(slime-repl))
-;; (slime-setup '(slime-fancy))
 
 (add-to-list 'load-path "~/.emacs.d/undo-tree")
 (require 'undo-tree)
