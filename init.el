@@ -148,3 +148,4 @@ Emacs buffer are those starting with “*”."
 
 (global-set-key (kbd "M-?") 'toggle-letter-case)
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
+(global-set-key (kbd "M-2") 'split-window-horizontally)
