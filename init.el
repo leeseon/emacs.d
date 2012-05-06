@@ -154,3 +154,5 @@ Emacs buffer are those starting with “*”."
 (defalias 'redo 'undo-tree-redo)
 (global-set-key (kbd "M-z") 'undo)
 (global-set-key (kbd "M-S-z") 'redo)
+
+(global-set-key (kbd "M-m") 'magit-status)
