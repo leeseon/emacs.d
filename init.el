@@ -25,11 +25,13 @@
     (package-refresh-contents)
     (package-install package)))
 
+(setq cua-enable-cua-keys nil)
+(cua-mode t)
+
 (require 'ergoemacs-mode)
 (setenv "ERGOEMACS_KEYBOARD_LAYOUT" "us")
 (ergoemacs-mode 1)
 
-(cua-mode t)
 (ido-mode t)
 (setq ring-bell-function 'ignore)
 (transient-mark-mode 1)
